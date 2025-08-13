@@ -1,0 +1,20 @@
+COMPILE:
+
+python pyuic4.py design.ui -o design.py -x
+
+DLL:
+gcc -c -DBUILD_DLL dll.c
+gcc -shared -o mydll.dll dll.o -Wl,--out-implib,libmessage.
+
+
+SO:
+gcc -fopenmp -std=c99 -g -O2 -fpic -c DLL.c -o DLL.o `python-config --cflags` && gcc -std=c99 -g -O2 -shared -o _DLL.so DLL.o `python-config --libs`
+
+DYLIB:
+gcc -dynamiclib -o mydylib.dylib -dy dylib.c
+
+BINARY:
+python C:\FOLDERANACONDA2\Scripts\pyinstaller-script.py --windowed --runtime-hook --icon=iconsasha.ico rthook_pyqt4.py --onefile sasha.py
+pyinstaller --onefile --windowed --runtime-hook=rthook_pyqt4.py --icon=iconsasha.ico   sasha.py
+python setup.py py2exe
+

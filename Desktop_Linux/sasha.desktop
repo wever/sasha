@@ -1,0 +1,12 @@
+#.local/share/applications
+[Desktop Entry]
+Name=SASHA PROGRAM
+Version=0.1-beta
+Type=Application
+Exec=/home/user/sasha_folder/executable_sasha_file
+Terminal=false
+Icon=/home/user/sasha_folder/images/iconsasha.xpm
+Comment=Simple Hartree-Fock Program Applied to Atoms and Small Molecules
+NoDisplay=false
+Categories=Utility;Application;
+Name[en]=sasha.desktop
